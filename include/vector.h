@@ -12,8 +12,10 @@ void _ec_vector_reserve(_ec_vector_t *vector, _ec_vector_size_t new_capacity);
 void _ec_vector_push(_ec_vector_t *vector, void *new_element);
 void _ec_vector_pop(_ec_vector_t *vector);
 void *_ec_vector_get(_ec_vector_t *vector, _ec_vector_size_t index);
-void _ec_vector_replace(_ec_vector_t *vector, _ec_vector_size_t index, void *new_element);
-//void _ec_vector_insert(_ec_vector_t *vector, _ec_vector_size_t index, void *new_element);
+void _ec_vector_set(_ec_vector_t *vector, _ec_vector_size_t index, void *new_element);
+void _ec_vector_insert(_ec_vector_t *vector, _ec_vector_size_t index, void *new_element);
+void _ec_vector_remove(_ec_vector_t *vector, _ec_vector_size_t index);
 
 #define _ec_vector_push_val(vector, T, val) {T __new_elt = val; _ec_vector_push(vector, &__new_elt);}
-#define _ec_vector_replace_val(vector, index, T, val) {T __new_elt = val; _ec_vector_replace(vector, index, &__new_elt);}
+#define _ec_vector_set_val(vector, index, T, val) {T __new_elt = val; _ec_vector_set(vector, index, &__new_elt);}
+#define _ec_vector_insert_val(vector, index, T, val) {T __new_elt = val; _ec_vector_insert(vector, index, &__new_elt);}
